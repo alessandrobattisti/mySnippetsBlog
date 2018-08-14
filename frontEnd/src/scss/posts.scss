@@ -1,0 +1,138 @@
+@import "./colors.scss";
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.card-no-post{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+}
+
+.card:hover, .card-no-post:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-header {
+  background: $sec-color;
+  padding: 10px 20px;
+  color: white;
+  text-align: left;
+  border-radius: 0 30px 0 0;
+  /*border-bottom: 2px solid $sec-color-dark;*/
+  margin-bottom: 0px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-title {
+  margin: 5px 0;
+  font-size: 20px;
+  width: 90%;
+}
+.card-title>a{
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.edit-icons {
+  width: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.edit-icons span {
+  cursor: pointer;
+  background: white;
+  color: $sec-color;
+  padding: 7px 9px;
+  border-radius: 16px;
+  font-size: 15px;
+  &:active,&:hover, &:focus{
+    background: $buttons-color-hover;
+  }
+}
+.edit-icons>span{
+  height: 20px!important;
+  line-height: 20px!important;
+}
+.fa-trash{
+  width: 15px!important;
+}
+.blog-post-meta {
+  margin-bottom: 5px;
+  color: white;
+}
+.blog-post-meta a {
+    color: #fff !important;
+}
+.tag_filter, .tag_filter_sidebar {
+    cursor: pointer;
+    text-decoration: none;
+    color: #33565c !important;
+}
+.tag_filter:hover, .tag_filter:active, .tag_filter_sidebar:active, .tag_filter_sidebar:hover {
+    text-decoration: underline;
+}
+.card-content {
+  text-align: left;
+  padding: 5px 20px;
+  background-color: #fbfbfb;
+}
+.card-content a {
+  color: $sec-color-dark;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    text-decoration: underline;
+  }
+}
+
+.card-content>p {
+  text-align: left;
+}
+
+pre {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+    -ms-overflow-style: scrollbar;
+    background: #e6e6e6;
+    padding: 10px 5px;
+    display: block;
+    font-size: 87.5%;
+    color: #212529;
+}
+code, kbd, pre, samp {
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+code {
+    background-color: #e6e6e6;
+    color: #000b00;
+    padding: 3px;
+    font-size: 87.5%;
+    word-break: break-word;
+}
+#loader {
+  width: 40px;
+  margin: auto;
+  display: none;
+}
+#last-post{
+  display: none;
+  margin-bottom: 20px;
+  background: white;
+}
+#hook {
+  width: 100%;
+  color:$background-color;
+  margin-top: -20px;
+}

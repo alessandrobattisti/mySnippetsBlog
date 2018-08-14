@@ -1,0 +1,83 @@
+@import "./colors.scss";
+
+
+#add_post {
+  width: 70%;
+  float: right;
+}
+
+#new-post-card{
+  background: white;
+  box-sizing: border-box;
+  padding: 0 20px 20px 20px;
+  border-radius: 0 30px 0 0;
+}
+
+#new-post-card > h3 {
+  margin-left: -20px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+#new_post_form {
+  width: 100%;
+}
+.form-group>label {
+  margin: 10px 0;
+  width: 100%;
+  float: left;
+  font-size: 19px;
+}
+
+#new_post_form input, textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 100%;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+#new_post_form input, textarea  {
+  &:active, &:focus{
+    box-shadow: 0px 0px 1px 2px $header-light-background-color;
+  }
+}
+
+#new_post_text {
+  height: 300px;
+}
+
+#new_post_save {
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 20px;
+  background:  $buttons-color;
+  border: 0;
+  font-weight: bold;
+}
+
+#new_post_save {
+  &:hover,  &:active,  &:focus{
+    background:  $buttons-color-hover;
+    color: white;
+  }
+  cursor: pointer;
+}
+.form-group {
+  width: 100%;
+}

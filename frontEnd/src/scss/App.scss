@@ -1,0 +1,336 @@
+@import "./colors.scss";
+
+.App {
+  text-align: center;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+input:required,
+textarea:required {
+  box-shadow: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: $background-color;
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  &:active, &:focus, &:hover {
+    text-decoration: underline;
+  }
+}
+
+a.a_color {
+  color: $sec-color-dark
+}
+.form-helper {
+  text-align: left;
+  color: gray;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #7b7b7b66;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#modal-loader {
+  width: 50px;
+  top: calc(50% - 50px);
+  position: absolute;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////     NOTIFICATIONS    ///////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+.error-handling, .success-handling, .info-handling {
+  transition: all 0.5s;
+  position: fixed;
+  top: calc(100% - 50px);
+  background-color: #f009;
+  width: 100%;
+  font-size: 18px;
+  visibility: visible;
+  opacity: 1;
+  height: 50px;
+  box-sizing: border-box;
+  /*line-height: 40px;*/
+  color: white;
+  font-weight: bold;
+}
+.success-handling{
+  background: #71ce71e6;
+}
+.info-handling{
+  background: #5f95bde6;
+}
+
+.error-handling.hidden, .success-handling.hidden, .info-handling.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.error-handling > p, .success-handling > p, .info-handling > p {
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.small-error {
+  font-size: 13px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////     HEADER     ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+.header {
+  background-color: $header-background-color;
+  height: 50px;
+  padding: 0;
+  color: $header-color;
+  /*border-bottom: 1px solid lightgray;*/
+  display: flex;
+}
+
+.header-container {
+  width: 1200px;
+  margin: auto;
+}
+
+#burger {
+  display: none;
+  cursor: pointer;
+}
+
+#burger {
+  &:active,
+  &:focus,
+  &:hover {
+    color: $header-light-background-color;
+  }
+}
+
+.header-title {
+  font-size: 30px;
+  margin: 0;
+  padding: 6px 0;
+  text-align: left;
+  font-family: Lobster,cursive;
+  font-weight: lighter;
+  float: left;
+}
+
+#title-blog{
+  margin-right: 20px;
+}
+
+.header-link {
+  width: auto;
+  float: left;
+  margin-left: 20px;
+  margin-top: 17px;
+}
+
+#search-form {
+  float: right;
+  margin: 9px 0;
+}
+
+#search-form > input {
+  border-radius: 5px;
+  padding: 4px;
+  border: 0;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 200px;
+  background: #f4f6ff;
+  color: #5c5c5c;
+  margin-top: 3px;
+}
+
+#search-form > input:active,
+#search-form > input:focus {
+  box-shadow: 0 0 1px 2px $header-light-background-color;
+}
+
+#search-run {
+  cursor: pointer;
+  margin-top: 3px;
+  float: right;
+}
+
+#search-run > svg {
+  padding: 5px;
+}
+
+#search-run > svg:active,
+#search-run > svg:focus,
+#search-run > svg:hover {
+  color: $header-light-background-color;
+}
+
+#search-run > svg:focus {
+  border: 2px solid;
+  border: 1px solid $header-light-background-color;
+  margin-left: -2px;
+}
+
+.title-bar {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+  float: left;
+  width: 100%;
+}
+
+#remove-filter {
+  float: left;
+  margin-top: 19px;
+  margin-left: 10px;
+  cursor: pointer;
+  background: $buttons-color;
+  padding: 7px 11px;
+  border-radius: 20px;
+  color: white;
+  display: none;
+}
+
+#remove-filter {
+  &:active,
+  &:focus,
+  &:hover {
+    background: $buttons-color-hover;
+  }
+}
+
+#post-title {
+  text-align: left;
+  font-style: italic;
+  font-family: Playfair Display,Georgia,Times New Roman,serif;
+  font-weight: lighter;
+  font-size: 25px;
+  margin: 20px 0 5px;
+  float: left;
+}
+
+#add-post {
+  float: right;
+  background: #ffc600;
+  color: white;
+  border-radius: 20px;
+  padding: 7px 11px;
+  margin-top: 20px;
+}
+
+#add-post {
+  &:active,
+  &:focus,
+  &:hover {
+    background: $buttons-color-hover;
+  }
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+  /*border: 1px solid lightgray;*/
+}
+
+.content {
+  min-height: calc(100vh - 50px);
+  width: 70%;
+  float: right;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#login-message {
+  text-align: justify;
+}
+
+hr {
+  border-top: 1px solid lightgray;
+  border-bottom: 0;
+}
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////      ABOUT     ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+#about-section > p {
+  text-align: justify;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+#about-section  b  {
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: 25px;
+  background: #618685;
+  color: white;
+  padding: 7px;
+  margin-top: 19px;
+}
+
+#about-section > h4 {
+  font-size: 22px;
+  text-align: left;
+  background: #6b6186;
+  color: white;
+  padding: 5px;
+}
+
+#about-section > h5 {
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.back-to-main-page {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 22px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////     IMPORTS    ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+@import "./normalize.scss";
+@import "./posts.scss";
+@import "./sidebar.scss";
+@import "./add_post.scss";
+@import "./single_post_page.scss";
+@import "./responsive.scss";
