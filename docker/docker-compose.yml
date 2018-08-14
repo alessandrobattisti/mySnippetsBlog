@@ -13,6 +13,13 @@ web:
   env_file: ./.env
   command: /rundjango.sh
 
+front-end:
+  build: ./front-end
+  volumes:
+    - ../frontEnd:/webapp/frontEnd
+    - /webapp/frontEnd/node_modules
+  command: npm run-script build
+
 nginx:
   restart: always
   build: ./nginx/
