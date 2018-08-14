@@ -1,15 +1,5 @@
 # My SnippetBlog
 
-
-## BUILD FRONTEND REACT APP
-Change `g_recaptcha` in `frontEnd/src/components/token.js` with your google
-recaptcha public key or let it as is to use the testing key.
-
-Run:
-
-`npm install`
-`npm run-script build`
-
 ## BUILD WITH DOCKER-COMPOSE
 
 ### INSTALL DOCKER AND DOCKER-COMPOSE
@@ -66,11 +56,12 @@ Add the docker group if it doesn't already exist:
 sudo groupadd docker
 ```
 
-Add the connected user "${USER}" to the docker group. Change the user name to match your preferred user:
+Add the connected user "${USER}" to the docker group:
+```
+sudo usermod -a -G docker $USER
+```
 
-```
-sudo gpasswd -a ${USER} docker
-```
+Log out of your account and log back in (if in doubt, reboot!):
 
 Restart the Docker daemon:
 
@@ -78,7 +69,10 @@ Restart the Docker daemon:
 sudo service docker restart
 ```
 
-### BUILD
+## BEFORE BUILD
+Change `g_recaptcha` in `frontEnd/src/components/token.js` with your google
+recaptcha public key or let it as is to use the testing key.
+
 Change environment variables in `/docker/.env`
 
 If you change db name you should change it in `docker/postgres/docker-entrypoint-initdb.d/init.sql` too.
@@ -86,6 +80,10 @@ If you change db name you should change it in `docker/postgres/docker-entrypoint
 You can leave RECAPTCHA_SECRET as is to use testing api key.
 
 Change `server_name` in `/docker/nginx/sites-enabled/webapp.org`
+
+### BUILD
+
+`cd` in `docker` folder
 
 ```
 docker-compose build
@@ -97,5 +95,11 @@ docker-compose restart
 docker exec -it docker_web_1 bash
 python3 manage.py makemigrations
 python3 manage.py migrate
+python3 manage.py makemigrations snippets_blog
+python3 manage.py migrate
 python3 manage.py createsuperuser
+```
+
+```
+docker-compose restart
 ```
