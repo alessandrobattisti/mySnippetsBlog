@@ -12,11 +12,10 @@ class About extends React.Component {
       <section id="about-section" className="content">
         <h3 className="section-title">About this app</h3>
         <p>
-          This blog will keep every code snippet I'll find useful. I will do my best
-          to cite the source of these snippets, but sometimes when in a hurry
-          I will forget to add it. So if you think to know the source of a snippet
-          let me know in the comments and I will update the post giving credits
-          to the original source.
+          This blog will keep every code snippet I'll find useful. I'm doig my best
+          to cite the source of these snippets but if I've missed one and you think
+          to know the original source of a snippet let me know in the comments and
+          I will update the post giving credits to the original source.
         </p>
         <p>
           This app is composed of two parts:
@@ -28,17 +27,17 @@ class About extends React.Component {
         <p>From the sidebar you can <b>filter</b> the blog posts.</p>
         <h4>Features</h4>
         <ul>
-          Infinite scrolling
-          Full text search
-          Comments protecte by Google Recaptcha
+          <li>Infinite scrolling</li>
+          <li>Full text search</li>
+          <li>CRUD operation on Posts and Tag</li>
+          <li>Comments section protected by Google Recaptcha</li>
         </ul>
         <h4>Technologies</h4>
-        <p>Made with <b>love</b>, <b>ReactJs</b> and <b>Django Rest Framework</b></p>
+        <p>Made with <b>ReactJs</b> and <b>Django Rest Framework</b></p>
 
           <h5>Front-end</h5>
           <p>
-          Frontend has been built using the ReactJs library. Github repo can be
-          found at this <a className="a_color" href="">Link</a>
+          Frontend has been built using the ReactJs library.
           </p>
           <p>This project was bootstrapped
             with <a rel="noopener noreferrer"
@@ -49,8 +48,20 @@ class About extends React.Component {
 
           <h5>Back-end</h5>
           <p>
-          Backend api has been built using Django and Rest Framework app. Github
-          repo can be found at this <a className="a_color" href="">Link</a>
+          Backend api has been built using Django and Rest Framework app.
+          </p>
+
+          <h5>Code</h5>
+          <p>
+            Github repo can be found at this
+            <a
+              className="a_color"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/alessandrobattisti/mySnippetsBlog"
+              >
+              Link
+            </a>
           </p>
 
         <h4>Login</h4>
