@@ -24,7 +24,7 @@ class About extends React.Component {
           <li>A list of snippets</li>
           <li>A sidebar that lists the tags added to posts</li>
         </ul>
-        <p>From the sidebar you can <b>filter</b> the blog posts.</p>
+        {/*<p>From the sidebar you can <b>filter</b> the blog posts.</p>*/}
         <h4>Features</h4>
         <ul>
           <li>Infinite scrolling</li>
@@ -53,8 +53,7 @@ class About extends React.Component {
 
           <h5>Code</h5>
           <p>
-            Github repo can be found at this
-            <a
+            Github repo can be found at this <a
               className="a_color"
               target="_blank"
               rel="noopener noreferrer"
