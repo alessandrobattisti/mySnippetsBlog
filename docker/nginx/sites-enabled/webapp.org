@@ -21,6 +21,24 @@ server {
     ##LOCATIONS##
 
     location /api {
+      error_log /webapp/logs/nginx-error.log;
+      access_log /webapp/logs/nginx-access.log;
+      proxy_pass http://web:8000;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /sitemap.xml {
+      error_log /webapp/logs/nginx-error.log;
+      access_log /webapp/logs/nginx-access.log;
+      proxy_pass http://web:8000;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location / {
       if ($dont_log_ua) {
         access_log off;
       }
@@ -34,17 +52,9 @@ server {
       }
       access_log /webapp/logs/nginx-access.log;
       error_log /webapp/logs/nginx-error.log;
-      proxy_pass http://web:8000;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-
-    location / {
-        error_log /webapp/logs/nginx-error.log;
-        expires 30d;
-        root /webapp/frontEnd/;
-        try_files $uri /index.html;
+      expires 30d;
+      root /webapp/frontEnd/;
+      try_files $uri /index.html;
     }
 
     location /robots.txt {

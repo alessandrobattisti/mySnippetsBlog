@@ -17,5 +17,6 @@ exec gunicorn snippetApi.wsgi:application \
     --limit-request-line=0 \
     --timeout=90 \
     --graceful-timeout=10 \
+    --error-logfile=/webapp/logs/gunicorn_error.log \
     #--access-logfile=/webapp/logs/access.log \
     "$@"
