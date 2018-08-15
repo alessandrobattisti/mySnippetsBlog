@@ -21,6 +21,12 @@ import { SearchForm } from './components/forms'
 
 
 class SectionTitle extends Component {
+  componentDidMount(){
+    document.title = this.props.section_title;
+  }
+  componentWillReceiveProps(NextProps){
+    document.title = NextProps.section_title;
+  }
   render(){
     return (
       <h2 id="post-title">{this.props.section_title}</h2>

@@ -12,19 +12,20 @@ class About extends React.Component {
       <section id="about-section" className="content">
         <h3 className="section-title">About this app</h3>
         <p>
-          This blog will keep every code snippet I'll find useful. I'm doig my best
+          In this blog will keep track of the most useful code snippets I'll find online.
+          I'm doig my best
           to cite the source of these snippets but if I've missed one and you think
           to know the original source of a snippet let me know in the comments and
           I will update the post giving credits to the original source.
         </p>
-        <p>
+        {/*<p>
           This app is composed of two parts:
         </p>
         <ul>
           <li>A list of snippets</li>
           <li>A sidebar that lists the tags added to posts</li>
         </ul>
-        {/*<p>From the sidebar you can <b>filter</b> the blog posts.</p>*/}
+        <p>From the sidebar you can <b>filter</b> the blog posts.</p>*/}
         <h4>Features</h4>
         <ul>
           <li>Infinite scrolling</li>
