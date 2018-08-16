@@ -30,7 +30,7 @@ class About extends React.Component {
         <ul>
           <li>Infinite scrolling</li>
           <li>Full text search</li>
-          <li>CRUD operation on Posts and Tag</li>
+          <li>CRUD operation on Posts and Tags</li>
           <li>Comments section protected by Google Recaptcha</li>
         </ul>
         <h4>Technologies</h4>
