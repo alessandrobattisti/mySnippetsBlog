@@ -18,7 +18,7 @@ import {NothingFound} from './components/nothing_found'
 import { scrollToTop } from './utils/utils'
 import { Notification } from './components/error_handling'
 import { SearchForm } from './components/forms'
-
+import Hammer from 'hammerjs';
 
 class SectionTitle extends Component {
   componentDidMount(){
@@ -110,6 +110,12 @@ class App extends Component {
       this.setState({show_sidebar:true, update_posts:false})
     }
   }
+  show_sidebar(){
+    this.setState({show_sidebar:true, update_posts:false})
+  }
+  hide_sidebar(){
+    this.setState({show_sidebar:false, update_posts:false})
+  }
 
   add_notifications(notification){
     let id = this.state.notification.id
@@ -119,7 +125,7 @@ class App extends Component {
 
 
   tag_filter(tag){
-    this.setState({tag_filter:tag, update_posts:true}, () => scrollToTop(300))
+    this.setState({tag_filter:tag, update_posts:true}, () => {scrollToTop(300), this.toggle_sidebar()})
   }
 
   componentWillReceiveProps(newprops){
@@ -128,13 +134,27 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    scrollToTop(0)
+    this.hammer = Hammer(this.container)
+    this.hammer.on('swiperight', function(e){
+      this.show_sidebar()
+    }.bind(this));    // remove ()
+    this.hammer.on('swipeleft', function(e){
+      this.hide_sidebar()
+    }.bind(this));    // remove ()
+
+  }
+
   research(e, query_val){
     e.preventDefault()
     if(this.state.search_filter!==query_val){
       this.props.history.push('/search_results')
       //this.setState({'update_posts':true,'search_filter':query_val})
-      this.setState({'search_filter':query_val, 'update_posts':true})
+      this.setState({'search_filter':query_val, 'update_posts':true}, ()=>this.toggle_sidebar())
+
     }
+
   }
 
   clear_search(update_posts){
@@ -170,7 +190,7 @@ class App extends Component {
         </header>
         <Notification notification={this.state.notification}/>
 
-        <div className="container">
+        <div className="container" ref={container => {this.container=container}}>
           <LoaderModal show_loader = {this.state.show_loader} />
           <ScreenProtector
             toggle_sidebar={this.toggle_sidebar.bind(this)}
@@ -212,6 +232,7 @@ class App extends Component {
             update_sidebar={this.state.update_sidebar}
             add_notification={this.add_notifications.bind(this)}
             show_sidebar={this.state.show_sidebar}
+            toggle_sidebar={this.toggle_sidebar.bind(this)}
           />
           <Route exact path='/' render = {() => (
             <Posts

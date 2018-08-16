@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import {if_auth} from './auth'
 import { request } from './../utils/fetch_helpers'
 import { list_categories_url } from './../config'
+import Hammer from 'hammerjs';
 
 export default class App extends Component {
   state = {'results':[], 'orig_res':[] }
@@ -37,6 +38,11 @@ export default class App extends Component {
   }
 
   componentDidMount(){
+    this.hammer = Hammer(this.sidebar)
+    this.hammer.on('swipeleft', function(e){
+      this.props.toggle_sidebar()
+    }.bind(this));    // remove ()
+
     this.is_mounted = true //this should be avoided but I'll leave it for now
     this.update_sidebar()
     //sidebar always visible
@@ -111,8 +117,9 @@ export default class App extends Component {
           </input>
           <span
             tabIndex="0"
-            onKeyPress={()=>this.rem_cat_filter()}
-            onClick={()=>this.rem_cat_filter()}
+            onKeyPress={()=>{this.rem_cat_filter()}}
+            onClick={()=>{this.rem_cat_filter()}}
+
             id="remove-cat-filter"
             title="Remove category filter"
             alt="Remove category filter">
@@ -131,6 +138,8 @@ export default class App extends Component {
                       <Link
                         tabIndex="0"
                         to={'/edit_tag/'+tag.tag}
+                        onKeyPress={()=>this.props.toggle_sidebar()}
+                        onClick={()=>this.props.toggle_sidebar()}
                         >
                         <span tabIndex="0" alt="Edit this tag" title="Edit this tag">
                           <FontAwesomeIcon icon={faPencilAlt} />
