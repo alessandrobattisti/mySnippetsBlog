@@ -4,6 +4,9 @@
   text-align: center;
 }
 
+h1, h2, h3, h4, h5 {
+  font-weight:500;
+}
 body,
 html {
   height: 100%;
@@ -141,7 +144,7 @@ a.a_color {
   padding: 6px 0;
   text-align: left;
   font-family: Lobster,cursive;
-  font-weight: lighter;
+  font-weight: 400;
   float: left;
 }
 
@@ -231,7 +234,7 @@ a.a_color {
   text-align: left;
   font-style: italic;
   font-family: Playfair Display,Georgia,Times New Roman,serif;
-  font-weight: lighter;
+  font-weight: 400;
   font-size: 25px;
   margin: 20px 0 5px;
   float: left;
@@ -290,7 +293,7 @@ hr {
   text-align: justify;
   font-size: 16px;
   font-style: italic;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 #about-section li {
