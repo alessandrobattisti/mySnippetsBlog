@@ -12,7 +12,6 @@ function get_tags(tags, tag_name){
     return new_tags
 }
 
-
 var isInViewport = function (elem) {
     var bounding = elem.getBoundingClientRect();
     return (

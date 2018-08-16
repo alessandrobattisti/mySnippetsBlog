@@ -13,6 +13,9 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background: $sidebar-background;
   margin-bottom: 20px;
+  position: absolute;
+  top: 115px;
+  transition: all 1s ease;
 }
 /*#sidebar:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);

@@ -39,12 +39,30 @@ export default class App extends Component {
   componentDidMount(){
     this.is_mounted = true //this should be avoided but I'll leave it for now
     this.update_sidebar()
+    //sidebar always visible
+    window.addEventListener('scroll', function(e){
+      const el = this.sidebar
+      if(window.innerWidth<851){
+        el.style.top = '100px'
+        return
+      }
+      const el_bottom = el.offsetTop + el.offsetHeight
+      if(el_bottom < window.pageYOffset){
+        el.style.top = window.pageYOffset +'px'
+      }
+      if(el.offsetTop > window.pageYOffset && window.pageYOffset >= 115){
+        el.style.top = window.pageYOffset +'px'
+      }
+      if(window.pageYOffset <= 115){
+        el.style.top = '115px'
+      }
+    }.bind(this))
   }
 
   componentWillUnmount(){
     this.is_mounted = false //this should be avoided but I'll leave it for now
   }
-  
+
   /* Filter sidebar categories */
   cat_filter(e){
     const d = e.target.value;
