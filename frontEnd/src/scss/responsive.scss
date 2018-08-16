@@ -59,7 +59,7 @@
   }
   .container {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
     box-sizing: border-box;
   }
   .title-bar {
@@ -112,9 +112,11 @@
   }
   #post-title {
     font-size: 20px;
+    width: calc(100% - 50px);
+    margin: 10px 0 5px;
   }
   #add-post {
-    margin-top: 14px;
+    margin-top: 10px;
   }
   /*POSTS*/
   .card {
