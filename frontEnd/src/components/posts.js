@@ -136,7 +136,7 @@ class Posts extends Component {
       this.setState({'last_post_show':false, 'bottom_loader_show':true})
       request(this.url, 'bottom_loader')
         .then(function(data){
-          this.setState({'bottom_loader_show':false})
+          //this.setState({'bottom_loader_show':false})
           if(data.count===0 && this.props.location.pathname==='/'){
             this.props.add_notification( { type:'info', message: 'No posts found, create your first snippet!' } )
             this.props.history.push('/add_new')
@@ -154,7 +154,7 @@ class Posts extends Component {
           }
           this.url = data['next']
           if(!this.url){
-            this.setState({'last_post_show':true}) //show no more post
+            this.setState({'last_post_show':true, 'bottom_loader_show':false}) //show no more post
           }
           this.stop_loading = false
           this.setState({'results': rm_dup(this.state.results.concat(data.results)) })
