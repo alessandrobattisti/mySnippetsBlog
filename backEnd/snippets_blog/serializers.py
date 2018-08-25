@@ -123,7 +123,7 @@ class ListPostSerializer(serializers.ModelSerializer):
         fields = ('title','content','created','tags','slug','html')
 
     def get_html(self,obj):
-        return markdown.markdown(obj.content)
+        return obj.html
 
     def get_created(self,obj):
         return obj.created.strftime('%Y-%m-%d %H:%M')
@@ -136,7 +136,7 @@ class EditPostSerializer(serializers.ModelSerializer):
         return obj.created.strftime('%Y-%m-%d %H:%M')
 
     def get_html(self,obj):
-        return markdown.markdown(obj.content)
+        return obj.html
 
     def create(self, validated_data):
         tags = validated_data.pop('tags', [])

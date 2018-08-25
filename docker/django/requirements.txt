@@ -9,10 +9,11 @@ django-tsvector-field==0.9.4
 djangorestframework==3.8.2
 gunicorn==19.9.0
 idna==2.7
+jsx-lexer==0.0.6
 Markdown==2.6.11
 Pillow==5.2.0
 psycopg2==2.7.5
+Pygments==2.2.0
 pytz==2018.5
 requests==2.19.1
 urllib3==1.23
-gunicorn==19.9.0

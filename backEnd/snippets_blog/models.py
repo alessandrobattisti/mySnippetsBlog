@@ -60,7 +60,7 @@ class PostAbstract(models.Model):
         return self.title + " " + self.slug
 
     def _html(self):
-        return markdown.markdown(self.content)
+        return markdown.markdown(self.content, extensions=['markdown.extensions.codehilite','markdown.extensions.fenced_code'])
 
     html=property(_html)
 
