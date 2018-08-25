@@ -2,9 +2,11 @@
 
 [**MySnippetBlog**](https://www.mysnippetsblog.eu/)
 
-## BUILD WITH DOCKER-COMPOSE
+A blog to keep track of the most useful code snippets I'll find online. Made with ReactJs and Django Rest Framework.
 
-### INSTALL DOCKER AND DOCKER-COMPOSE
+## Build with docker compose
+
+### Install docker and docker-compose
 Install docker and docker-compose on your pc.
 
 For ubuntu 16.04 you can follow these steps:
@@ -71,7 +73,7 @@ Restart the Docker daemon:
 sudo service docker restart
 ```
 
-## BEFORE BUILD
+## Before build
 Change `g_recaptcha` in `frontEnd/src/components/token.js` with your google
 recaptcha public key or let it as is to use the testing key.
 
@@ -83,7 +85,7 @@ You can leave RECAPTCHA_SECRET as is to use testing api key.
 
 Change `server_name` in `/docker/nginx/sites-enabled/webapp.org`
 
-### BUILD
+### Build
 
 `cd` in `docker` folder
 
