@@ -136,7 +136,11 @@ class App extends Component {
 
   componentDidMount(){
     scrollToTop(0)
-    this.hammer = Hammer(this.container)
+    this.hammer = Hammer(this.container, {
+        behavior: {
+          userSelect: true
+      }
+    })
     this.hammer.on('swiperight', function(e){
       this.show_sidebar()
     }.bind(this));    // remove ()
