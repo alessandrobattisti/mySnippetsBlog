@@ -1,4 +1,4 @@
-const host = 'http://localhost/'
+const host = 'https://www.mysnippetsblog.eu/'
 const tag_list_url = host + 'api/tag_list/'
 const delete_post_url = host + 'api/posts/destroy/'
 const list_post_url = host + 'api/posts/list?format=json&page=1'

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     ##myApps
     'snippets_blog'
 ]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
