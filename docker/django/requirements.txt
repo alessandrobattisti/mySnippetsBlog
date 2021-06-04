@@ -1,6 +1,6 @@
 certifi==2018.8.13
 chardet==3.0.4
-Django==2.2.10
+Django==2.2.21
 django-autoslug-iplweb==1.9.4
 django-cors-headers==2.4.0
 django-filter==2.0.0
